@@ -72,4 +72,7 @@ return require('packer').startup(function(use)
 
     -- LSP Status
     use('nvim-lua/lsp-status.nvim')
+
+    -- Nerdtree file explorer
+    use('preservim/nerdtree')
 end)
