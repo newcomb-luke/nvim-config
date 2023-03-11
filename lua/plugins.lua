@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
 	vim.cmd('colorscheme rose-pine')
 
+    -- Gruvbox color scheme
+    use { "ellisonleao/gruvbox.nvim" }
+
 	-- Treesitter playground
 	use('nvim-treesitter/playground')
 

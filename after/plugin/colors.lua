@@ -1,5 +1,7 @@
 function InitColorScheme(color)
-	color = color or "rose-pine"
+    color = color or "gruvbox"
+
+    vim.o.background = "dark"
 
 	vim.cmd.colorscheme(color)
 end
