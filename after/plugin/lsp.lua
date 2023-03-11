@@ -1,3 +1,6 @@
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
@@ -18,9 +21,11 @@ require('lspconfig').rust_analyzer.setup {
                     'cargo', 'clippy', '--workspace', '--message-format=json',
                     '--all-targets', '--all-features'
                 }
-            }
+            },
         }
-    }
+    },
+    on_attach = lsp_status.on_attach,
+    capabilities = lsp_status.capabilities
 }
 
 lsp.on_attach(function(client, bufnr)

@@ -69,4 +69,7 @@ return require('packer').startup(function(use)
         'goolord/alpha-nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
     }
+
+    -- LSP Status
+    use('nvim-lua/lsp-status.nvim')
 end)

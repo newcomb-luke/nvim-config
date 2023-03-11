@@ -1,3 +1,13 @@
+local function LspStatus()
+    local msg = 'No active LSP'
+
+    local clients = vim.lsp.get_active_clients()
+
+    if next(clients) == nil then return msg end
+
+    return require('lsp-status').status()
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -21,7 +31,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {LspStatus, 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
