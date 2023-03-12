@@ -75,4 +75,7 @@ return require('packer').startup(function(use)
 
     -- Nerdtree file explorer
     use('preservim/nerdtree')
+
+    -- Auto rustfmt
+    use('rust-lang/rust.vim')
 end)
